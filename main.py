@@ -19,21 +19,74 @@ def send_text(message):
     ab = False
     while ab == False:
         try:
-            a = random.randint(1, 9900000)
+            a = random.randint(1, 99000000)
             b = str(a)
+            g = 0
 
             if len(b) == 1:
-                b = '000000' + b
+                g = random.randint(1,4)
+                if g == 1:
+                    b = '000000' + b
+                elif g == 2:
+                    b = '0000000' + b
+                elif g == 3:
+                    b = b + '000000'
+                elif g == 4:
+                    b = b + '0000000'
             if len(b) == 2:
-                b = '00000' + b
+                g = random.randint(1,4)
+                if g == 1:
+                    b = '00000' + b
+                elif g == 2:
+                    b = '000000' + b
+                elif g == 3:
+                    b = b + '00000'
+                elif g == 4:
+                    b = b + '000000'
             if len(b) == 3:
-                b = '0000' + b
+                g = random.randint(1,4)
+                if g == 1:
+                    b = '0000' + b
+                elif g == 2:
+                    b = '00000' + b
+                elif g == 3:
+                    b = b + '0000'
+                elif g == 4:
+                    b = b + '00000'
             if len(b) == 4:
-                b = '000' + b
+                g = random.randint(1,4)
+                if g == 1:
+                    b = '000' + b
+                elif g == 2:
+                    b = '00000' + b
+                elif g == 3:
+                    b = b + '0000'
+                elif g == 4:
+                    b = b + '00000'
             if len(b) == 5:
-                b = '00' + b
+                g = random.randint(1,4)
+                if g == 1:
+                    b = '00' + b
+                elif g == 2:
+                    b = '000' + b
+                elif g == 3:
+                    b = b + '00'
+                elif g == 4:
+                    b = b + '000'
             if len(b) == 6:
-                b = '0' + b
+                g = random.randint(1,2)
+                if g == 1:
+                    b = '0' + b
+                else: 
+                    b = b + '0'
+            if len(b) == 7:
+                g = random.randint(1,2)
+                if g == 1:
+                    d = random.randint(1,2)
+                    if d == 1:
+                        b = '0' + b
+                    else:
+                        b = b + '0'
 
             keys = ip_movie.get_movie(b)
 
